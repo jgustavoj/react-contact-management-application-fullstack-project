@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export const EditContact = props => {
 	const [contact, setContact] = useState({
-		name: props.location.aboutProps.contact.full_name,
+		name: props.location.aboutProps.contact.name,
 		email: props.location.aboutProps.contact.email,
 		phone: props.location.aboutProps.contact.phone,
 		address: props.location.aboutProps.contact.address,

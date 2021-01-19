@@ -2,6 +2,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+# Remember to migrate every time you change your models
+#  You have to migrate and upgrade the migrations for every update you make to your models:
+#  $ pipenv run migrate (to make the migrations)
+#  $ pipenv run upgrade  (to update your databse with the migrations)
+
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)

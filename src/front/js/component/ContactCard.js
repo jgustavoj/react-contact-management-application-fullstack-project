@@ -34,7 +34,7 @@ export const ContactCard = props => {
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
-					<label className="name lead">{currentContact[0].full_name}</label>
+					<label className="name lead">{currentContact[0].name}</label>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3" />
 					<span className="text-muted">{currentContact[0].address}</span>
