@@ -7,6 +7,7 @@ from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
 
+# Test endpoint 
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
@@ -39,6 +40,7 @@ def handle_contact():
         return jsonify(contact), 200
     return "Invalid Method", 404
 
+
 @api.route('/contact/<int:id>', methods=['PUT', 'GET'])
 def handle_contact_update(id):
     """
@@ -59,8 +61,9 @@ def handle_contact_update(id):
     #Get request
     if request.method == 'GET':
         contact = Contact.query.get(id)
-        contact = list(map(lambda x: x.serialize(), contact))
-        return jsonify(contact), 200
+        return jsonify(contact.serialize()), 200
+        # contact = list(map(lambda x: x.serialize(), contact))
+        # return jsonify(contact), 200
     return "Invalid Method", 404
 
 
