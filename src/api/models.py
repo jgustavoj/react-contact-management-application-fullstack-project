@@ -28,7 +28,7 @@ class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), unique=False, nullable=False)
     email = db.Column(db.String(250), unique=False, nullable=False)
-    phone = db.Column(db.String(250), unique=False, nullable=False)
+    phone = db.Column(db.BigInteger, unique=False, nullable=False)
     address = db.Column(db.String(250), unique=False, nullable=False)
 
     def __repr__(self):
