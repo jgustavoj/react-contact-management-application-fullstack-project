@@ -29,6 +29,10 @@ class Contact(db.Model):
     name = db.Column(db.String(250), unique=False, nullable=False)
     email = db.Column(db.String(250), unique=False, nullable=False)
     phone = db.Column(db.BigInteger, unique=False, nullable=False)
+<<<<<<< HEAD
+=======
+    # String not migrating to db 
+>>>>>>> 09d8a53868cf1633076b7da223a84d3938eb415f
     address = db.Column(db.String(250), unique=False, nullable=False)
 
     def __repr__(self):

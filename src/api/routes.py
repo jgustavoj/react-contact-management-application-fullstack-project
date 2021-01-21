@@ -19,6 +19,11 @@ def handle_hello():
     return jsonify(response_body), 200
 
 
+"""
+Contact Routes Thread
+
+"""
+
 @api.route('/contact', methods=['POST', 'GET'])
 def handle_contact():
     """
@@ -61,9 +66,8 @@ def handle_contact_update(id):
     #Get request
     if request.method == 'GET':
         contact = Contact.query.get(id)
-        return jsonify(contact.serialize()), 200
-        # contact = list(map(lambda x: x.serialize(), contact))
-        # return jsonify(contact), 200
+        contact = list(map(lambda x: x.serialize(), contact))
+        return jsonify(contact), 200
     return "Invalid Method", 404
 
 
@@ -74,7 +78,6 @@ def delete_item(id):
     Delete Contact
     
     """
-
     contact = Contact.query.get(id)
     if contact is None:
         raise APIException('Contact not found', status_code=404)
