@@ -23,16 +23,12 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
-
+        
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), unique=False, nullable=False)
     email = db.Column(db.String(250), unique=False, nullable=False)
     phone = db.Column(db.BigInteger, unique=False, nullable=False)
-<<<<<<< HEAD
-=======
-    # String not migrating to db 
->>>>>>> 09d8a53868cf1633076b7da223a84d3938eb415f
     address = db.Column(db.String(250), unique=False, nullable=False)
 
     def __repr__(self):
@@ -40,6 +36,7 @@ class Contact(db.Model):
 
     def serialize(self):
         return {
+
             "id": self.id,
             "name": self.name,
             "email": self.email,
